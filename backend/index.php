@@ -1,3 +1,3 @@
 <?php
 
-echo "Backend Connection";
+echo "Backend code folders";
