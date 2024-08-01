@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import '../App.css'; // Import the CSS file
+import '../App.css';
 
 const CreateUser = () => {
   const [inputs, setInputs] = useState({});
@@ -16,7 +16,7 @@ const CreateUser = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setMessage({ text: "", type: "" }); // Reset any previous message
+    setMessage({ text: "", type: "" });
 
     axios
       .post("http://localhost:81/crud-operations/backend/api/user/save", inputs)
@@ -34,7 +34,7 @@ const CreateUser = () => {
           console.error("Network error:", error.message);
           setMessage({ text: "Network error. Please try again.", type: "error" });
         }
-        setTimeout(() => setMessage({ text: "", type: "" }), 3000); // Clear message after 3 seconds
+        setTimeout(() => setMessage({ text: "", type: "" }), 3000);
       });
   };
 
